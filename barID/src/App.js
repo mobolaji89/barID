@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import firebase from 'firebase';
+import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
 import LoginForm from './components/LoginForm';
 
 class App extends Component {
   componentWillMount() {
     const config = {
-      apiKey: 'AIzaSyBMpoXdfxHKVeTs4JcdkZN7rnk0KdDyiec',
-      authDomain: 'barid-d2840.firebaseapp.com',
-      databaseURL: 'https://barid-d2840.firebaseio.com',
-      storageBucket: 'barid-d2840.appspot.com',
-      messagingSenderId: '742891989864'
+      apiKey: 'AIzaSyBR4FTGiOcTZ5OBNi6thE0KhCDR3PaOtQM',
+      authDomain: 'manager-2328b.firebaseapp.com',
+      databaseURL: 'https://manager-2328b.firebaseio.com',
+      storageBucket: 'manager-2328b.appspot.com',
+      messagingSenderId: '193075244299'
     };
 
     firebase.initializeApp(config);
   }
 
   render() {
+    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+
     return (
-      <Provider store={createStore(reducers)}>
-      	<LoginForm />
+      <Provider store={store}>
+        <LoginForm />
       </Provider>
     );
   }
