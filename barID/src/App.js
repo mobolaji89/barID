@@ -31,3 +31,5 @@ class App extends Component {
 }
 
 export default App;
+
+// CHANGE THE FIREBASE API TO OUR OWN
