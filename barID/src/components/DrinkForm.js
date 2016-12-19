@@ -8,38 +8,28 @@ class DrinkForm extends Component {
   render() {
     return (
       <View>
-        <CardSection>
-          <Input
-            label="Name"
-            placeholder="Jane"
-            value={this.props.name}
-            onChangeText={value => this.props.drinkUpdate({ prop: 'name', value })}
-          />
+        <CardSection style={{ flexDirection: 'column' }}>
+          <Text style={styles.pickerTextStyle}>Drink</Text>
+          <Picker
+            selectedValue={this.props.name}
+            onValueChange={value => this.props.drinkUpdate({ prop: 'name', value })}
+          >
+            <Picker.Item label="Gin | Tonic" value="Gin | Tonic" />
+            <Picker.Item label="Whiskey | Coke" value="Whiskey | Coke" />
+            <Picker.Item label="Long Island" value="Long Island" />
+            <Picker.Item label="Moscow Mule" value="Moscow Mule" />
+            <Picker.Item label="Beer" value="Beer" />
+            <Picker.Item label="Vodka" value="Vodka" />
+            <Picker.Item label="Bacardi" value="Bacardi" />
+          </Picker>
         </CardSection>
 
         <CardSection>
           <Input
             label="Price"
             placeholder="$10.00"
-            value={this.props.price}
-            onChangeText={value => this.props.drinkUpdate({ prop: 'price', value })}
+            value="$10.00"
           />
-        </CardSection>
-
-        <CardSection style={{ flexDirection: 'column' }}>
-          <Text style={styles.pickerTextStyle}>Status</Text>
-          <Picker
-            selectedValue={this.props.status}
-            onValueChange={value => this.props.drinkUpdate({ prop: 'status', value })}
-          >
-            <Picker.Item label="Monday" value="Monday" />
-            <Picker.Item label="Tuesday" value="Tuesday" />
-            <Picker.Item label="Wednesday" value="Wednesday" />
-            <Picker.Item label="Thursday" value="Thursday" />
-            <Picker.Item label="Friday" value="Friday" />
-            <Picker.Item label="Saturday" value="Saturday" />
-            <Picker.Item label="Sunday" value="Sunday" />
-          </Picker>
         </CardSection>
 
         <CardSection>

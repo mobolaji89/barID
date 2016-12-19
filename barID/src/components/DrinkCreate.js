@@ -8,7 +8,7 @@ class DrinkCreate extends Component {
   onButtonPress() {
     const { name, price, status, amount } = this.props;
 
-    this.props.drinkCreate({ name, price, status: status || 'Being Prepared', amount: amount || 'Zero Balance' });
+    this.props.drinkCreate({ name: name || 'Gin | Tonic', price: '$10.00', status: 'IN-PREPARATION', amount: amount || '0' });
   }
 
   render() {
