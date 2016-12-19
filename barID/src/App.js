@@ -9,11 +9,11 @@ import Router from './Router';
 class App extends Component {
   componentWillMount() {
     const config = {
-      apiKey: 'AIzaSyBR4FTGiOcTZ5OBNi6thE0KhCDR3PaOtQM',
-      authDomain: 'manager-2328b.firebaseapp.com',
-      databaseURL: 'https://manager-2328b.firebaseio.com',
-      storageBucket: 'manager-2328b.appspot.com',
-      messagingSenderId: '193075244299'
+      apiKey: 'AIzaSyBMpoXdfxHKVeTs4JcdkZN7rnk0KdDyiec',
+      authDomain: 'barid-d2840.firebaseapp.com',
+      databaseURL: 'https://barid-d2840.firebaseio.com',
+      storageBucket: 'barid-d2840.appspot.com',
+      messagingSenderId: '742891989864'
     };
 
     firebase.initializeApp(config);
