@@ -17,15 +17,15 @@ const RouterComponent = () => {
 
       <Scene key="main">
         <Scene
-          onRight={() => Actions.employeeCreate()}
+          onRight={() => Actions.drinkCreate()}
           rightTitle="Add"
-          key="employeeList"
+          key="drinkList"
           component={DrinkList}
           title="Drinks"
           initial
         />
-        <Scene key="employeeCreate" component={DrinkCreate} title="Create Drink" />
-        <Scene key="employeeEdit" component={DrinkEdit} title="Edit Drink" />
+        <Scene key="drinkCreate" component={DrinkCreate} title="Create Drink" />
+        <Scene key="drinkEdit" component={DrinkEdit} title="Edit Drink" />
       </Scene>
     </Router>
   );
