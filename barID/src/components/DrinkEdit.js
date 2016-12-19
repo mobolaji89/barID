@@ -2,35 +2,35 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Communications from 'react-native-communications';
-import EmployeeForm from './EmployeeForm';
-import { employeeUpdate, employeeSave, employeeDelete } from '../actions';
+import DrinkForm from './DrinkForm';
+import { drinkUpdate, drinkSave, drinkDelete } from '../actions';
 import { Card, CardSection, Button, Confirm } from './common';
 
-class EmployeeEdit extends Component {
+class DrinkEdit extends Component {
   state = { showModal: false };
 
   componentWillMount() {
-    _.each(this.props.employee, (value, prop) => {
-      this.props.employeeUpdate({ prop, value });
+    _.each(this.props.drink, (value, prop) => {
+      this.props.drinkUpdate({ prop, value });
     });
   }
 
   onButtonPress() {
-    const { name, phone, shift } = this.props;
+    const { name, price, status, amount } = this.props;
 
-    this.props.employeeSave({ name, phone, shift, uid: this.props.employee.uid });
+    this.props.drinkSave({ name, price, status, amount, uid: this.props.drink.uid });
   }
 
   onTextPress() {
-    const { phone, shift } = this.props;
+    const { price, status } = this.props;
 
-    Communications.text(phone, `Your upcoming shift is on ${shift}`);
+    Communications.text(price, `Your upcoming status is on ${status}`);
   }
 
   onAccept() {
-    const { uid } = this.props.employee;
+    const { uid } = this.props.drink;
 
-    this.props.employeeDelete({ uid });
+    this.props.drinkDelete({ uid });
   }
 
   onDecline() {
@@ -40,7 +40,7 @@ class EmployeeEdit extends Component {
   render() {
     return (
       <Card>
-        <EmployeeForm />
+        <DrinkForm />
 
         <CardSection>
           <Button onPress={this.onButtonPress.bind(this)}>
@@ -56,7 +56,7 @@ class EmployeeEdit extends Component {
 
         <CardSection>
           <Button onPress={() => this.setState({ showModal: !this.state.showModal })}>
-            Fire Employee
+            Cancel Drink
           </Button>
         </CardSection>
 
@@ -73,11 +73,11 @@ class EmployeeEdit extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { name, phone, shift } = state.employeeForm;
+  const { name, price, status, amount } = state.drinkForm;
 
-  return { name, phone, shift };
+  return { name, price, status, amount };
 };
 
 export default connect(mapStateToProps, {
-  employeeUpdate, employeeSave, employeeDelete
-})(EmployeeEdit);
+  drinkUpdate, drinkSave, drinkDelete
+})(DrinkEdit);
