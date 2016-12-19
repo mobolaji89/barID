@@ -15,3 +15,11 @@ export const EMPLOYEE_CREATE = 'employee_create';
 export const EMPLOYEES_FETCH_SUCCESS = 'employees_fetch_success';
 
 export const EMPLOYEE_SAVE_SUCCESS = 'employee_save_success';
+
+export const DRINK_UPDATE = 'drink_update';
+
+export const DRINK_CREATE = 'drink_create';
+
+export const DRINKS_FETCH_SUCCESS = 'drinks_fetch_success';
+
+export const DRINK_SAVE_SUCCESS = 'drink_save_success';

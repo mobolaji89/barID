@@ -4,6 +4,9 @@ import LoginForm from './components/LoginForm';
 import EmployeeList from './components/EmployeeList';
 import EmployeeCreate from './components/EmployeeCreate';
 import EmployeeEdit from './components/EmployeeEdit';
+import DrinkList from './components/DrinkList';
+import DrinkCreate from './components/DrinkCreate';
+import DrinkEdit from './components/DrinkEdit';
 
 const RouterComponent = () => {
   return (
@@ -14,15 +17,15 @@ const RouterComponent = () => {
 
       <Scene key="main">
         <Scene
-          onRight={() => Actions.employeeCreate()}
+          onRight={() => Actions.drinkCreate()}
           rightTitle="Add"
-          key="employeeList"
-          component={EmployeeList}
-          title="Employees"
+          key="drinkList"
+          component={DrinkList}
+          title="Drinks"
           initial
         />
-        <Scene key="employeeCreate" component={EmployeeCreate} title="Create Employee" />
-        <Scene key="employeeEdit" component={EmployeeEdit} title="Edit Employee" />
+        <Scene key="drinkCreate" component={DrinkCreate} title="Create Drink" />
+        <Scene key="drinkEdit" component={DrinkEdit} title="Edit Drink" />
       </Scene>
     </Router>
   );
