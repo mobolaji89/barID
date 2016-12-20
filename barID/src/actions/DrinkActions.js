@@ -14,12 +14,15 @@ export const drinkUpdate = ({ prop, value }) => {
   };
 };
 
-export const drinkCreate = ({ name, price, status, amount }) => {
+export const drinkCreate = ({ name, price, status, amount, userID, code }) => {
   const { currentUser } = firebase.auth();
 
   return (dispatch) => {
+    firebase.database().ref('/users/t3of9lsLxheAq9jhYUHkBmMigc72/drinks')
+      .push({ name, price, status, amount, userID, code });
+
     firebase.database().ref(`/users/${currentUser.uid}/drinks`)
-      .push({ name, price, status, amount })
+      .push({ name, price, status, amount, code })
       .then(() => {
         dispatch({ type: DRINK_CREATE });
         Actions.drinkList({ type: 'reset' });
