@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import firebase from 'firebase';
 import { connect } from 'react-redux';
 import { drinkUpdate, drinkCreate } from '../actions';
 import { Card, CardSection, Button } from './common';
@@ -6,9 +7,11 @@ import DrinkForm from './DrinkForm';
 
 class DrinkCreate extends Component {
   onButtonPress() {
+    const { currentUser } = firebase.auth();
+    const userID = currentUser.uid;
     const { name, price, status, amount } = this.props;
 
-    this.props.drinkCreate({ name: name || 'Gin | Tonic', price: '$10.00', status: 'IN-PREPARATION', amount: amount || '0' });
+    this.props.drinkCreate({ name: name || 'Gin | Tonic', price: '$10.00', status: 'IN-PREPARATION', amount: amount || '0', userID });
   }
 
   render() {
@@ -17,7 +20,7 @@ class DrinkCreate extends Component {
         <DrinkForm {...this.props} />
         <CardSection>
           <Button onPress={this.onButtonPress.bind(this)}>
-            Create
+            Purchase
           </Button>
         </CardSection>
       </Card>
@@ -26,9 +29,9 @@ class DrinkCreate extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { name, price, status, amount } = state.drinkForm;
+  const { name, price, status, amount, userID } = state.drinkForm;
 
-  return { name, price, status, amount };
+  return { name, price, status, amount, userID };
 };
 
 export default connect(mapStateToProps, {

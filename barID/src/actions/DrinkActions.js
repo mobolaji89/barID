@@ -14,10 +14,13 @@ export const drinkUpdate = ({ prop, value }) => {
   };
 };
 
-export const drinkCreate = ({ name, price, status, amount }) => {
+export const drinkCreate = ({ name, price, status, amount, userID }) => {
   const { currentUser } = firebase.auth();
 
   return (dispatch) => {
+    firebase.database().ref('/users/t3of9lsLxheAq9jhYUHkBmMigc72/drinks')
+      .push({ name, price, status, amount, userID });
+
     firebase.database().ref(`/users/${currentUser.uid}/drinks`)
       .push({ name, price, status, amount })
       .then(() => {
