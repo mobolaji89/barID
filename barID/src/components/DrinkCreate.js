@@ -16,6 +16,7 @@ class DrinkCreate extends Component {
     const image_url = array[(Math.floor(Math.random() * 9) + 1)];
 
     this.props.drinkCreate({ name: name || 'Gin | Tonic', price: '$10.00', status: 'IN-PREPARATION', amount: amount || '0', userID, code, image_url });
+
   }
 
   render() {
