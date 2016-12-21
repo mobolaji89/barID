@@ -19,7 +19,7 @@ class StatusModal extends Component {
       <Card>
         <CardSection>
           <Text style={styles.titleText}>
-          Your Tab: $0.00
+          Your Total Tab Amount: $0.00
           </Text>
         </CardSection>
 

@@ -9,17 +9,10 @@ class DrinkCreate extends Component {
   onButtonPress() {
     const { currentUser } = firebase.auth();
     const userID = currentUser.uid;
-    const code = Math.floor(Math.random() * 400) + 1;
-    const { name, price, status, quantity } = this.props;
+    const code = Math.floor(Math.random() * 400) + 1; 
+    const { name, price, status, amount } = this.props;
 
-    this.props.drinkCreate({
-      name: name || 'Gin | Tonic',
-      price: price || 10,
-      status: 'IN-PREPARATION',
-      quantity: quantity || 0,
-      userID,
-      code
-    });
+    this.props.drinkCreate({ name: name || 'Gin | Tonic', price: 10, status: 'IN-PREPARATION', amount: amount || '0', userID, code });
   }
 
   render() {
@@ -37,9 +30,9 @@ class DrinkCreate extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { name, price, status, quantity, userID, code } = state.drinkForm;
+  const { name, price, status, amount, userID, code } = state.drinkForm;
 
-  return { name, price, status, quantity, userID, code };
+  return { name, price, status, amount, userID, code };
 };
 
 export default connect(mapStateToProps, {

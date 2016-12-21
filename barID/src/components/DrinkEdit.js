@@ -16,15 +16,9 @@ class DrinkEdit extends Component {
   }
 
   onButtonPress() {
-    const { name, price, status, quantity } = this.props;
+    const { name, price, status, amount } = this.props;
 
-    this.props.drinkSave({
-      name,
-      price,
-      status,
-      quantity,
-      uid: this.props.drink.uid
-    });
+    this.props.drinkSave({ name, price, status, amount, uid: this.props.drink.uid });
   }
 
   onTextPress() {
@@ -79,9 +73,9 @@ class DrinkEdit extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { name, price, status, quantity } = state.drinkForm;
+  const { name, price, status, amount } = state.drinkForm;
 
-  return { name, price, status, quantity };
+  return { name, price, status, amount };
 };
 
 export default connect(mapStateToProps, {

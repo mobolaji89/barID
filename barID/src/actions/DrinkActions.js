@@ -14,15 +14,15 @@ export const drinkUpdate = ({ prop, value }) => {
   };
 };
 
-export const drinkCreate = ({ name, price, status, quantity, userID, code }) => {
+export const drinkCreate = ({ name, price, status, amount, userID, code }) => {
   const { currentUser } = firebase.auth();
 
   return (dispatch) => {
     firebase.database().ref('/users/t3of9lsLxheAq9jhYUHkBmMigc72/drinks')
-      .push({ name, price, status, quantity, userID, code });
+      .push({ name, price, status, amount, userID, code });
 
     firebase.database().ref(`/users/${currentUser.uid}/drinks`)
-      .push({ name, price, status, quantity, code })
+      .push({ name, price, status, amount, code })
       .then(() => {
         dispatch({ type: DRINK_CREATE });
         Actions.drinkList({ type: 'reset' });
@@ -41,12 +41,12 @@ export const drinksFetch = () => {
   };
 };
 
-export const drinkSave = ({ name, price, status, quantity, uid }) => {
+export const drinkSave = ({ name, price, status, amount, uid }) => {
   const { currentUser } = firebase.auth();
 
   return (dispatch) => {
     firebase.database().ref(`/users/${currentUser.uid}/drinks/${uid}`)
-      .set({ name, price, status, quantity })
+      .set({ name, price, status, amount })
       .then(() => {
         dispatch({ type: DRINK_SAVE_SUCCESS });
         Actions.drinkList({ type: 'reset' });
