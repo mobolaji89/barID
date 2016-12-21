@@ -12,7 +12,7 @@ class DrinkCreate extends Component {
     const code = Math.floor(Math.random() * 400) + 1; 
     const { name, price, status, amount } = this.props;
 
-    this.props.drinkCreate({ name: name || 'Gin | Tonic', price: '$10.00', status: 'IN-PREPARATION', amount: amount || '0', userID, code });
+    this.props.drinkCreate({ name: name || 'Gin | Tonic', price: 10, status: 'IN-PREPARATION', amount: amount || '0', userID, code });
   }
 
   render() {
