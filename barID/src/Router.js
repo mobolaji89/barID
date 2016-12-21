@@ -15,13 +15,15 @@ const RouterComponent = () => {
       <Scene key="main">
         <Scene
           onLeft={() => Actions.statusModal()}
-          leftTitle="Total"
-          onRight={() => Actions.drinkCreate()}
-          rightTitle="Add"
+          leftTitle="Tab"
+
           key="drinkList"
           component={DrinkList}
-          title="Tab"
+          title="Orders"
           initial
+
+          onRight={() => Actions.drinkCreate()}
+          rightTitle="Add"
         />
         <Scene key="statusModal" component={StatusModal} />
         <Scene key="drinkCreate" component={DrinkCreate} title="Create Drink" />
