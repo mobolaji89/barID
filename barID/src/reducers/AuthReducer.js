@@ -7,8 +7,8 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = {
-  email: '',
-  password: '',
+  email: 'lol@lol.com',
+  password: 'lol1234',
   user: null,
   error: '',
   loading: false
@@ -31,9 +31,9 @@ export default (state = INITIAL_STATE, action) => {
   }
 };
 
-// make a new object - take all the properties from my 
+// make a new object - take all the properties from my
 // existing state object - throw them into object
-// then define the property email - give it a value of 
+// then define the property email - give it a value of
 // action.payload - toss it on top of whatever properties are on that state obj
-// when you write a reducer you need to 
+// when you write a reducer you need to
 // produce a new object
