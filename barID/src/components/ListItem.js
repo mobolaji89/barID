@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, TouchableWithoutFeedback, View } from 'react-native';
+import { Text, TouchableWithoutFeedback, View, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { CardSection } from './common';
 
@@ -9,15 +9,23 @@ class ListItem extends Component {
   }
 
   render() {
-    const { name } = this.props.drink;
-
+    const { name, image_url } = this.props.drink;
+    console.log(this.props)
     return (
       <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
         <View>
           <CardSection>
-            <Text style={styles.titleStyle}>
-              {name}
-            </Text>
+            <View>
+              <Image
+                style={styles.imageStyle}
+                source={{uri: image_url}}
+              />
+            </View>
+            <View>
+              <Text style={styles.titleStyle}>
+                {name}
+              </Text>
+            </View>
           </CardSection>
         </View>
       </TouchableWithoutFeedback>
@@ -27,8 +35,15 @@ class ListItem extends Component {
 
 const styles = {
   titleStyle: {
-    fontSize: 18,
-    paddingLeft: 15
+    fontFamily: 'Geeza Pro',
+    fontSize: 22,
+    paddingLeft: 15,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  imageStyle: {
+    width: 75,
+    height: 75
   }
 };
 
