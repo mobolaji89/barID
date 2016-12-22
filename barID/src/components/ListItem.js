@@ -25,9 +25,6 @@ class ListItem extends Component {
               <Text style={styles.titleStyle}>
                 {name}
               </Text>
-              <Text style={styles.statusCodeStyle}>
-                Status: Pending
-              </Text>
               <Text style={styles.totalStyle}>
                 Total: ${amount * 10}.00
               </Text>
@@ -45,10 +42,6 @@ const styles = {
     fontSize: 22,
     paddingLeft: 15
   },
-  totalStyle: {
-    fontSize: 15,
-    paddingLeft: 15
-  },
   imageStyle: {
     width: 75,
     height: 75
@@ -56,15 +49,15 @@ const styles = {
   textContainerStyle: {
     flex: 1,
     alignItems:'center',
+    justifyContent: 'center',
     paddingRight: 15,
   },
   imageContainerStyle: {
     paddingLeft: 9
   },
-  statusCodeStyle: {
-    color: 'red',
+  totalStyle: {
     fontFamily: 'Geeza Pro',
-    fontSize: 16,
+    fontSize: 17,
     paddingLeft: 15
   }
 };
