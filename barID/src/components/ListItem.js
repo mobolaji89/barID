@@ -10,7 +10,8 @@ class ListItem extends Component {
 
   render() {
     const { name, image_url, amount } = this.props.drink;
-    console.log(this.props)
+    const total = amount * 10;
+    console.log(this.props);
     return (
       <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
         <View>
@@ -18,7 +19,7 @@ class ListItem extends Component {
             <View style={styles.imageContainerStyle}>
               <Image
                 style={styles.imageStyle}
-                source={{uri: image_url}}
+                source={{ uri: image_url }}
               />
             </View>
             <View style={styles.textContainerStyle}>
@@ -26,7 +27,7 @@ class ListItem extends Component {
                 {name}
               </Text>
               <Text style={styles.totalStyle}>
-                Total: ${amount * 10}.00
+                Total: ${total}.00
               </Text>
             </View>
           </CardSection>
@@ -48,7 +49,7 @@ const styles = {
   },
   textContainerStyle: {
     flex: 1,
-    alignItems:'center',
+    alignItems: 'center',
     justifyContent: 'center',
     paddingRight: 15,
   },

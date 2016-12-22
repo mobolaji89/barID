@@ -17,7 +17,6 @@ export const drinkUpdate = ({ prop, value }) => {
 export const drinkCreate = ({ 
   name, price, status, amount, userID, code, image_url, phone_number
   }) => {
-  
   const { currentUser } = firebase.auth();
 
   return (dispatch) => {
