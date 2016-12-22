@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
+import firebase from 'firebase';
 import { connect } from 'react-redux';
 import Communications from 'react-native-communications';
 import DrinkForm from './DrinkForm';
@@ -16,15 +17,15 @@ class DrinkEdit extends Component {
   }
 
   onButtonPress() {
-    const { name, price, status, amount } = this.props;
+    const { name, price, status, amount, image_url } = this.props;
 
-    this.props.drinkSave({ name, price, status, amount, uid: this.props.drink.uid });
+    this.props.drinkSave({ name, price, status, amount, uid: this.props.drink.uid, image_url });
   }
 
   onTextPress() {
-    const { price, status } = this.props;
+    const { phone_number, status } = this.props;
 
-    Communications.text(price, `Your upcoming status is on ${status}`);
+    Communications.text(phone_number, `Your upcoming status is on ${status}`);
   }
 
   onAccept() {
@@ -38,6 +39,24 @@ class DrinkEdit extends Component {
   }
 
   render() {
+    const { currentUser } = firebase.auth();
+    const userID = currentUser.uid;
+
+    if (userID === 't3of9lsLxheAq9jhYUHkBmMigc72') {
+      return (
+        <Card>
+          <DrinkForm />
+
+          <CardSection>
+            <Button onPress={this.onTextPress.bind(this)}>
+              Text Status
+            </Button>
+          </CardSection>
+
+        </Card>
+      );
+    }
+
     return (
       <Card>
         <DrinkForm />
@@ -45,12 +64,6 @@ class DrinkEdit extends Component {
         <CardSection>
           <Button onPress={this.onButtonPress.bind(this)}>
             Save Changes
-          </Button>
-        </CardSection>
-
-        <CardSection>
-          <Button onPress={this.onTextPress.bind(this)}>
-            Text Schedule
           </Button>
         </CardSection>
 
@@ -73,9 +86,9 @@ class DrinkEdit extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { name, price, status, amount } = state.drinkForm;
+  const { name, price, status, amount, image_url, code, phone_number } = state.drinkForm;
 
-  return { name, price, status, amount };
+  return { name, price, status, amount, image_url, code, phone_number };
 };
 
 export default connect(mapStateToProps, {

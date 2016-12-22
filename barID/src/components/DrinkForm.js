@@ -34,6 +34,15 @@ class DrinkForm extends Component {
 
         <CardSection>
           <Input
+            label="Phone Number"
+            placeholder="222-222-2222"
+            value={this.props.phone_number}
+            onChangeText={value => this.props.drinkUpdate({ prop: 'phone_number', value })}
+          />
+        </CardSection>
+
+        <CardSection>
+          <Input
             label="Amount"
             placeholder="1"
             value={this.props.amount}
@@ -53,9 +62,9 @@ const styles = {
 };
 
 const mapStateToProps = (state) => {
-  const { name, price, status, amount } = state.drinkForm;
+  const { name, price, status, amount, phone_number } = state.drinkForm;
 
-  return { name, price, status, amount };
+  return { name, price, status, amount, phone_number };
 };
 
 export default connect(mapStateToProps, { drinkUpdate })(DrinkForm);
