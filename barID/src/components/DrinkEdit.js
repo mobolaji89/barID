@@ -25,7 +25,7 @@ class DrinkEdit extends Component {
   onTextPress() {
     const { phone_number, status } = this.props;
 
-    Communications.text(phone_number, `Your upcoming status is on ${status}`);
+    Communications.text(phone_number, `Your drink is in: ${status}`);
   }
 
   onAccept() {
@@ -52,6 +52,20 @@ class DrinkEdit extends Component {
               Text Status
             </Button>
           </CardSection>
+
+        <CardSection>
+          <Button onPress={() => this.setState({ showModal: !this.state.showModal })}>
+            Remove Drink
+          </Button>
+        </CardSection>
+
+        <Confirm
+          visible={this.state.showModal}
+          onAccept={this.onAccept.bind(this)}
+          onDecline={this.onDecline.bind(this)}
+        >
+          Was the confirmation message sent?
+        </Confirm>
 
         </Card>
       );
