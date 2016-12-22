@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { Text, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Card, CardSection, Input, Button, Spinner } from './common';
@@ -34,6 +34,10 @@ class LoginForm extends Component {
   render() {
     return (
       <Card>
+        <Image 
+          source={{ uri: 'https://www.dropbox.com/home?preview=barIDLOGO.png' }}
+          style={{ width: 400, height: 400 }} 
+        />
         <CardSection>
           <Input
             label="Email"

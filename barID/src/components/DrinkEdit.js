@@ -25,7 +25,7 @@ class DrinkEdit extends Component {
   onTextPress() {
     const { phone_number, status } = this.props;
 
-    Communications.text(phone_number, `Your upcoming status is on ${status}`);
+    Communications.text(phone_number, `Your drink is in: ${status}`);
   }
 
   onAccept() {
