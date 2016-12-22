@@ -9,7 +9,7 @@ class ListItem extends Component {
   }
 
   render() {
-    const { name, image_url } = this.props.drink;
+    const { name, image_url, amount } = this.props.drink;
     console.log(this.props)
     return (
       <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
@@ -28,6 +28,9 @@ class ListItem extends Component {
               <Text style={styles.statusCodeStyle}>
                 Status: Pending
               </Text>
+              <Text style={styles.totalStyle}>
+                Total: ${amount * 10}.00
+              </Text>
             </View>
           </CardSection>
         </View>
@@ -40,6 +43,10 @@ const styles = {
   titleStyle: {
     fontFamily: 'Geeza Pro',
     fontSize: 22,
+    paddingLeft: 15
+  },
+  totalStyle: {
+    fontSize: 15,
     paddingLeft: 15
   },
   imageStyle: {
