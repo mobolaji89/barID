@@ -53,6 +53,20 @@ class DrinkEdit extends Component {
             </Button>
           </CardSection>
 
+        <CardSection>
+          <Button onPress={() => this.setState({ showModal: !this.state.showModal })}>
+            Remove Drink
+          </Button>
+        </CardSection>
+
+        <Confirm
+          visible={this.state.showModal}
+          onAccept={this.onAccept.bind(this)}
+          onDecline={this.onDecline.bind(this)}
+        >
+          Was the confirmation message sent?
+        </Confirm>
+
         </Card>
       );
     }
