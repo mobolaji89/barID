@@ -8,10 +8,11 @@ const image_url = array[(Math.floor(Math.random() * 9) + 1)];
 
 const INITIAL_STATE = {
   name: '',
-  price: '',
+  price: '10',
   status: '',
-  amount: '',
-  imageURL: image_url
+  amount: '1',
+  imageURL: image_url,
+  phone_number: '065-953-9534'
 };
 
 export default (state = INITIAL_STATE, action) => {

@@ -11,7 +11,6 @@ class ListItem extends Component {
   render() {
     const { name, image_url, amount } = this.props.drink;
     const total = amount * 10;
-    console.log(this.props);
     return (
       <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
         <View>
