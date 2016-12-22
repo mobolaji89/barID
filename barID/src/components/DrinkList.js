@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ListView, Text } from 'react-native';
+import { ListView, Text, View } from 'react-native';
 import { Card, CardSection, Button, Confirm } from './common';
 import { drinksFetch } from '../actions';
 import ListItem from './ListItem';
@@ -16,7 +16,7 @@ class DrinkList extends Component {
   onDecline() {
     this.setState({ showModal: false });
   }
-  
+
   componentWillMount() {
     this.props.drinksFetch();
     this.createDataSource(this.props);
@@ -59,7 +59,7 @@ class DrinkList extends Component {
     const drinks = this.props.drinks;
     const drinkCountArray = drinks.map((drink) => drink.amount);
     const drinkPriceArray = drinks.map((drink) => drink.price);
-    
+
     let total = 0;
 
     for (let i = 0; i < drinkCountArray.length; i++) {
@@ -67,14 +67,16 @@ class DrinkList extends Component {
     }
     console.log(total);
     return (
-      <ListView
-        enableEmptySections
-        dataSource={this.dataSource}
-        renderRow={this.renderRow}
-        renderFooter={() =>
+      <View style={{flex: 1}}>
+        <ListView
+          enableEmptySections
+          dataSource={this.dataSource}
+          renderRow={this.renderRow}
+        />
+        <View>
           <Card>
             <CardSection>
-              <Button onPress={() => this.setState({ showModal: !this.state.showModal })}> 
+              <Button onPress={() => this.setState({ showModal: !this.state.showModal })}>
               Total: ${total}.00
               </Button>
             </CardSection>
@@ -86,10 +88,9 @@ class DrinkList extends Component {
             >
               Are you sure you want to close your tab?
             </Confirm>
-          </Card> 
-          
-        }
-      />
+          </Card>
+        </View>
+      </View>
     );
   }
 }
