@@ -9,8 +9,8 @@ class ListItem extends Component {
   }
 
   render() {
-    const { name, image_url } = this.props.drink;
-    console.log(this.props)
+    const { name, image_url, amount } = this.props.drink;
+    const total = amount * 10;
     return (
       <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
         <View>
@@ -18,15 +18,15 @@ class ListItem extends Component {
             <View style={styles.imageContainerStyle}>
               <Image
                 style={styles.imageStyle}
-                source={{uri: image_url}}
+                source={{ uri: image_url }}
               />
             </View>
             <View style={styles.textContainerStyle}>
               <Text style={styles.titleStyle}>
                 {name}
               </Text>
-              <Text style={styles.statusCodeStyle}>
-                Status: Pending
+              <Text style={styles.totalStyle}>
+                Total: ${total}.00
               </Text>
             </View>
           </CardSection>
@@ -48,16 +48,16 @@ const styles = {
   },
   textContainerStyle: {
     flex: 1,
-    alignItems:'center',
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingRight: 15,
   },
   imageContainerStyle: {
     paddingLeft: 9
   },
-  statusCodeStyle: {
-    color: 'red',
+  totalStyle: {
     fontFamily: 'Geeza Pro',
-    fontSize: 16,
+    fontSize: 17,
     paddingLeft: 15
   }
 };
