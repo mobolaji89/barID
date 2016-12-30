@@ -7,12 +7,12 @@ var array = ['https://images.unsplash.com/photo-1462539405390-d0bdb635c7d1?dpr=1
 const image_url = array[(Math.floor(Math.random() * 9) + 1)];
 
 const INITIAL_STATE = {
-  name: '',
+  name: 'Kelvin',
   price: '10',
   status: '',
   amount: '1',
   imageURL: image_url,
-  phone_number: '065-953-9534'
+  phone_number: '661-236-1200'
 };
 
 export default (state = INITIAL_STATE, action) => {
