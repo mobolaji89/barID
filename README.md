@@ -1,8 +1,10 @@
 # barID
 The mobile application that allows you to create and checkout out of bar tabs using invisible pay.
+
+![BarID](/barID.png?raw=true "BarID Title")
 __________________________________________
 
-Welcome to the launch of barID the IOS and Android mobile app that is seeking to transform bar tabbing into one of seamless user experience. 
+Welcome to barID the IOS and Android mobile app that is seeking to transform bar tabbing into one of seamless user experience. 
 
 Could you imagine walking into a bar. Opening an application. Ordering. Picking up your drink. And then walking out?
 
