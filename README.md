@@ -6,7 +6,7 @@ __________________________________________
 
 barID is a React Native iOS and Android mobile application that is seeking to transform bar tabbing into one of seamless user experience.
 
-badID enables the user to open the app, walk into the bar, order drinks, and pick up an order. As soon as the user walks out the proximity of the bar, the user's tab will be closed.
+barID enables the user to open the app, walk into the bar, order drinks, and pick up an order. As soon as the user walks out the proximity of the bar, the user's tab will be closed.
 
 Our team is integrating iBeacon into our mobile application to allow for the convenience of opening a tab and closing one without waiting in any lines. iBeacon is a technology made by Apple that use Bluetooth Low Energy (BLE), which allows Mobile Apps (running on both iOS and Android devices) to listen for signals from beacons in the physical world and react accordingly.
 
