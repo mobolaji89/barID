@@ -25,7 +25,7 @@ Now moving on to the bar, by logging in as an admin:
 
 ### Admin functionality:
 1. See a list of all orders at the bar
-2. Message the person when the order is ready 
+2. Send a customer a text notification when an order is ready 
 3. Remove the order from your queue, after the drink has been picked up
 
 Our next step is to use iBeacon so that if a customer knowingly walks out of a bar, their tab will be automatically closed. We also seek to implement Stripe for payment processing within our application.
