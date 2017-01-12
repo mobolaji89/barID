@@ -1,45 +1,34 @@
 # barID
-The mobile application that allows you to create and checkout out of bar tabs using invisible pay.
+**The mobile application that allows you to create and checkout out of bar tabs using invisible pay**
 
-![BarID](/barID.png?raw=true "BarID Title")
+<img src="https://github.com/mobolaji89/barID/blob/master/barID.png" width="326">
 __________________________________________
 
-Welcome to barID the IOS and Android mobile app that is seeking to transform bar tabbing into one of seamless user experience. 
+barID is a React Native iOS and Android mobile application that is seeking to transform bar tabbing into one of seamless user experience.
 
-Could you imagine walking into a bar. Opening an application. Ordering. Picking up your drink. And then walking out?
+badID enables the user to open the app, walk into the bar, order drinks, and pick up an order. As soon as the user walks out the proximity of the bar, the user's tab will be closed.
 
-There is no longer a need to imagine such things because the technology is Here!
+Our team is integrating iBeacon into our mobile application to allow for the convenience of opening a tab and closing one without waiting in any lines. iBeacon is a technology made by Apple that use Bluetooth Low Energy (BLE), which allows Mobile Apps (running on both iOS and Android devices) to listen for signals from beacons in the physical world and react accordingly.
 
-WE are integrating iBeacons into our mobile application to allow for the convenience of opening a tab and closing one without waiting in any lines.
+Thus far in our prototype, we have not officially enabled location proximity. There is still some slight work that needs to be done with event triggering with iBeacon.
 
-iBeacon is a newer technology that uses Bluetooth-like-sensors to deliver context and micro-location to phones and other smart devices. 
-By placing ibeacons in any of the physical world, businesses are able to trigger contextual actions on our phones based on proximity.
-Thus far in our prototype we have officially enabled location proximity. There is still some slight work that needs to be done with event triggering.
+## USER APPLICATION FEATURES:
+There are 2 types of user profiles: Customer, and Business
 
-Before you today is the full mobile application that is accessible and downloadable to any iOS or android device. 
-
-APPLICATION FEATURES:
-There are 2 types of user profiles: A Person and Business
-
-If I were to login as a user I will be brought to the users tab at the bar they are currently at. 
-User App Functionality
+### Customer functionality:
 1. Login
 2. Add drink to tab
-3. Edit said drink
+3. Edit drink
 4. Cancel drink
 
-Now moving on to the bar - by logging in to an account that has been setup with admin privileges
+Now moving on to the bar, by logging in as an admin:
 
-Admin App Functionality - Tablet | iPad
-1. See the drinks ordered at your bar
-2. Message the person when the drink is ready 
-3. Remove the drink from your queue
+### Admin functionality:
+1. See a list of all orders at the bar
+2. Message the person when the order is ready 
+3. Remove the order from your queue, after the drink has been picked up
 
-Our next step is to Use IBeacon - so that by simply knowing if you have walked out of the range of the bar - we will be able to automatically close your tab and charge your account. 
+Our next step is to use iBeacon so that if a customer knowingly walks out of a bar, their tab will be automatically closed. We also seek to implement Stripe for payment processing within our application.
 
-Thereby allowing for a seamless ordering experience.
-
-Be on the lookout for barID at an App Store near you. 
-
-View the Application Launch Video here: https://www.youtube.com/watch?v=rODQE10ls3g
+View Application Launch Video: https://youtu.be/PWANijn6M6Q
 
