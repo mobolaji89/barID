@@ -1,7 +1,7 @@
 # barID
 **The mobile application that allows you to create and checkout out of bar tabs using invisible pay.**
 
-<img src="https://github.com/mobolaji89/barID/blob/master/barID.png" width="326">
+<img src="https://github.com/mobolaji89/barID/blob/master/barID.jpg" width="326">
 __________________________________________
 
 barID is a React Native iOS and Android mobile application that is seeking to transform bar tabbing into one of seamless user experience.
