@@ -1,5 +1,5 @@
 # barID
-**The mobile application that allows you to create and checkout out of bar tabs using invisible pay**
+**The mobile application that allows you to create and checkout out of bar tabs using invisible pay.**
 
 <img src="https://github.com/mobolaji89/barID/blob/master/barID.png" width="326">
 __________________________________________
